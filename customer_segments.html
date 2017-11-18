@@ -12135,9 +12135,9 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>I believe the first example chosen would be a cafe, using mainly milk and groceries</li>
-<li>The second candidate is probably a fresh food market, due to high weightage on only "Fresh" and practically nothing otherwise</li>
-<li>The third candidate is probably a retailer, selling frozen foods and groceries chiefly</li>
+<li>The first example has abnormally high (w.r.t to its mean) purchases of milk and groceries, with less than average purchases of other products. It would lead me to believe that this is some sort of a cafe, since they might need milk, coffee, breads and general food items quite frequently.</li>
+<li>The second candidate buys practically nothing but fresh foods. Its "fresh" purchases are some of the highest in the dataset, and much above average. Its purchases of the rest of the feature space are abysmal wrt their inidivudal averages. My guess is that this is probably a fresh food market.</li>
+<li>The third candidate purchases an above average amount of frozen foods and groceries, with below average numbers for the rest. I would guess that this is a retailer, dealing chiefly in frozen foods and groceries</li>
 </ul>
 
 </div>
@@ -20971,13 +20971,16 @@ HRERERERkQ9jUkdEREREROTDmNQRERERERH5MCZ1REREREREPoxJHRERERERkQ9jUkdEREREROTD
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong></p>
+<p><strong>Answer:</strong>
+The silhouette scores are as follows:</p>
 <ul>
-<li><p>The silhouette scores are as follows: <img src="attachment:image.png" alt="image.png"></p>
-</li>
-<li><p>Thus, the case with 2 clusters is the best (silhouette score closest to +1)</p>
-</li>
+<li>2 : 0.422</li>
+<li>3 : 0.37</li>
+<li>4 : 0.29</li>
+<li>5 : 0.25</li>
+<li>6 : 0.28</li>
 </ul>
+<p>Thus, the case with 2 clusters is the best (silhouette score closest to +1)</p>
 
 </div>
 </div>
@@ -21823,7 +21826,13 @@ Sample point 2 predicted to be in Cluster 0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> The predictions aren't consistent with the initial intuition that I had regarding the category of each sample point.</p>
+<p><strong>Answer:</strong> If I were to estimate what segment each of the samples would fall into, I would say:</p>
+<ul>
+<li>The first one, due to its high milk/grocery purchases, I would expect to be a part of the 2nd Segment (Segment 1), because of exactly that reason</li>
+<li>The second sample has large purchases of fresh foods, and very little of any others, so I would say it would be likely to fall in segment 0</li>
+<li>Since segment 1 doesn't have much in the name of purchases of frozen foods, I would predict that the 3rd sample falls in segment 0; but this I cannot say with strong conviction since the grocery part wouldn't completely fit the story. This is a borderline scenario.</li>
+</ul>
+<p>The code's predictions seem to more or less agree with the though process, as the samples are allotted to the expected clusters. Thus, there is some consistency in the Q1 conjectures; by those estimates, one can probably call the two segments, respectively, "retailers/markets" and "restaurants/cafes".</p>
 
 </div>
 </div>
@@ -21862,7 +21871,8 @@ Sample point 2 predicted to be in Cluster 0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> If, as postulated, the large customers are restaurants/hotels, I think the delivery schedule might be OK, since groceries and milk can be stored for a little more time than fresh produce. The first customer segment would probably not be very happy because they also buy a lot of fresh produce which might perish easier.</p>
+<p><strong>Answer:</strong> As per our discussions till now, we estimate that the first segment corresponds to some sort of retailer or food market purchasing, more prominently, fresh foods and frozen products, and that the second is a kind of restaurant/cafe, pruchasing milk, groceries and detergent_paper. A shift to a less frequent delivery service would mean that fresh product buyers would more likeyl be affected, and thus the first group might not react positively.</p>
+<p>To check this hypothesis, the wholesaler could modify schedules for some randomly chosen customers from both segments, and check if they would be OK with these changes through surveys, or channel checks. He could also look at what competition is doing with regards to such segments on their own fronts and whether there is any more indication of what way customers react in to such changes.</p>
 
 </div>
 </div>
